@@ -43,15 +43,94 @@
         <div class="tab-pane fade" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab">
             Order Module
         </div>
+
+        <!-- PAYMENT MODULE -->
         <div class="tab-pane fade" id="pills-payment" role="tabpanel" aria-labelledby="pills-payment-tab">
-            Payment Module
+            <section style="min-height: 100vh;">
+                <div class="container bg-light" style="min-height: 100vh;">
+                    <h3 class="text-center">Payment for Table #8</h3>
+                    <div class="row">
+                        <div class="col-md-8 mx-auto">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <th>Staff ID:</th>
+                                                <th>12345</th>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">Table No:</td>
+                                                <th>8</th>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">Order No:</td>
+                                                <th>56</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Item Name</th>
+                                        <th>Quantity</th>
+                                        <th>Price (RM)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row">1</td>
+                                        <td>Fried Fish Soup with Tomato</td>
+                                        <td>1</td>
+                                        <td class="text-right">35.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">2</td>
+                                        <td>Fried Rice</td>
+                                        <td>5</td>
+                                        <td class="text-right">40.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">3</td>
+                                        <td>Chinese Tea</td>
+                                        <td>5</td>
+                                        <td class="text-right">5.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">SubTotal (RM)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-right">80.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">Service Tax (10%)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-right">8.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" class="font-weight-bold">Total (RM)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-right font-weight-bold">88.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button type="button" id="" class="btn btn-primary btn-block">Make Payment</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
         <!-- REPORT MODULE -->
         <div class="tab-pane fade" id="pills-report" role="tabpanel" aria-labelledby="pills-report-tab">
             <section style="min-height: 100vh;">
                 <!-- SELECT REPORT FORM -->
-                <div class="container" style="padding-top:15vh;" id="generateReportForm">
+                <div class="container bg-light" style="padding-top:15vh; min-height: 100vh;" id="generateReportForm">
                     <h1 class="text-center">Generate Report</h1>
                     <hr>
                     <div class="row">
@@ -86,8 +165,9 @@
                 </div>
 
                 <!-- SAMPLE REPORT TABLE -->
-                <div class="container mt-5" style="display: none" id="displayReport">
+                <div class="container pt-4 bg-light" style="display: none; min-height: 100vh;" id="displayReport">
                     <h1 class="text-center">Popular Food Item Sales Report</h1>
+                    <h2 class="text-center">30 November 2018 to 31 December 2018</h2>
                     <hr>
                     <table class="table">
                         <thead class="thead-dark">
@@ -104,29 +184,29 @@
                                 <td scope="row">1</td>
                                 <td>Fried Fish Soup with Tomato</td>
                                 <td>750</td>
-                                <td>35</td>
-                                <td>37,500</td>
+                                <td class="text-right">35.00</td>
+                                <td class="text-right">37,500.00</td>
                             </tr>
                             <tr>
                                 <td scope="row">2</td>
                                 <td>Fried Rice</td>
                                 <td>500</td>
-                                <td>8</td>
-                                <td>4,000</td>
+                                <td class="text-right">8.00</td>
+                                <td class="text-right">4,000.00</td>
                             </tr>
                             <tr>
                                 <td scope="row">2</td>
                                 <td>Chicken Soup</td>
                                 <td>220</td>
-                                <td>10</td>
-                                <td>2,200</td>
+                                <td class="text-right">10.00</td>
+                                <td class="text-right">2,200.00</td>
                             </tr>
                             <tr>
-                                <td scope="row">TOTAL SALES (RM):</td>
+                                <td scope="row" class="font-weight-bold">TOTAL SALES (RM):</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>43,700</td>
+                                <td class="font-weight-bold text-right">43,700.00</td>
                             </tr>
                         </tbody>
                     </table>
@@ -146,7 +226,7 @@
             <section style="min-height: 100vh;">
 
                 <!-- STAFF LOGIN FORM -->
-                <div class="container" style="padding-top:15vh;" id="staffLoginForm">
+                <div class="container bg-light" style="padding-top:15vh; min-height: 100vh" id="staffLoginForm">
                     <h1 class="text-center">Staff Login</h1>
                     <hr>
                     <div class="row">
@@ -171,7 +251,7 @@
                 </div>
 
                 <!-- REGISTER STAFF FORM -->
-                <div class="container mt-4" style="display: none" id="registerStaffForm">
+                <div class="container pt-4 bg-light" style="display: none; min-height: 100vh" id="registerStaffForm">
                     <h1 class="text-center">Register New Staff</h1>
                     <hr>
                     <div class="row">
