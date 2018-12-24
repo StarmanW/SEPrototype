@@ -56,8 +56,8 @@
                                     <table class="table">
                                         <tbody>
                                             <tr>
-                                                <th>Staff ID:</th>
-                                                <th>12345</th>
+                                                <th>Staff Name (ID):</th>
+                                                <th>Mei Ling (12345)</th>
                                             </tr>
                                             <tr>
                                                 <td scope="row">Table No:</td>
@@ -119,7 +119,20 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <button type="button" id="" class="btn btn-primary btn-block">Make Payment</button>
+
+                            <div class="form-group">
+                                <label for="">Amount (RM)</label>
+                                <input type="text" class="form-control" name="" id="cashAmt" aria-describedby="helpId"
+                                    placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Changes (RM)</label>
+                                <input type="text" class="form-control" name="" id="changesTxtBox" aria-describedby="helpId"
+                                    placeholder="">
+                            </div>
+
+                            <button type="button" id="makePaymentBtn" class="btn btn-primary btn-block">Make Payment</button>
                         </div>
                     </div>
                 </div>
@@ -362,6 +375,7 @@
             let staffLoginBtn = document.querySelector('#staffLoginBtn');
             let generateReportBtn = document.querySelector('#generateReportBtn');
             let backToGenReportBtn = document.querySelector('#backToGenReportBtn');
+            let makePaymentBtn = document.querySelector('#makePaymentBtn');
 
             // Function to display register new staff form & hide staff login form
             function displayRegisterStaffForm(e) {
@@ -381,9 +395,16 @@
                 document.querySelector('#displayReport').style.display = 'none';
             }
 
+            // Function to calculate balance and display the balance
+            function calculateBalance(e) {
+                let cashAmt = document.querySelector('#cashAmt').value;
+                document.querySelector('#changesTxtBox').value = parseFloat(parseFloat(cashAmt) - 88.00).toFixed(2);
+            }
+
             staffLoginBtn.addEventListener('click', displayRegisterStaffForm);
             generateReportBtn.addEventListener('click', displayReport);
             backToGenReportBtn.addEventListener('click', backToGenReport);
+            makePaymentBtn.addEventListener('click', calculateBalance);
         })();
     </script>
 </body>
