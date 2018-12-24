@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Staff Login</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="pills-menu-tab" data-toggle="pill" href="#pills-menu" role="tab"
+                aria-controls="pills-menu" aria-selected="true">Menu</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-order-tab" data-toggle="pill" href="#pills-order" role="tab" aria-controls="pills-order"
+                aria-selected="false">Order</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-payment-tab" data-toggle="pill" href="#pills-payment" role="tab"
+                aria-controls="pills-payment" aria-selected="false">Payment</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-report-tab" data-toggle="pill" href="#pills-report" role="tab" aria-controls="pills-report"
+                aria-selected="false">Report</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-staff-tab" data-toggle="pill" href="#pills-staff" role="tab" aria-controls="pills-staff"
+                aria-selected="false">Staff</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-menu" role="tabpanel" aria-labelledby="pills-menu-tab">
+            Menu Module
+        </div>
+        <div class="tab-pane fade" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab">
+            Order Module
+        </div>
+        <div class="tab-pane fade" id="pills-payment" role="tabpanel" aria-labelledby="pills-payment-tab">
+            Payment Module
+        </div>
+
+        <!-- REPORT MODULE -->
+        <div class="tab-pane fade" id="pills-report" role="tabpanel" aria-labelledby="pills-report-tab">
+            <section style="min-height: 100vh;">
+                <!-- SELECT REPORT FORM -->
+                <div class="container" style="padding-top:15vh;" id="generateReportForm">
+                    <h1 class="text-center">Generate Report</h1>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-10 mx-auto">
+                            <div class="form-group">
+                                <label for="">Report Type</label>
+                                <select class="form-control" name="" id="">
+                                    <option disabled selected>Select report type</option>
+                                    <option>Popular Food Item Sales</option>
+                                    <option>Monthly Revenue</option>
+                                    <option>Yearly Revenue</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Report Timeline</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="date" class="form-control" name="" id="" aria-describedby="helpId"
+                                            placeholder="">
+                                    </div>
+                                    to
+                                    <div class="col-md-5">
+                                        <input type="date" class="form-control" name="" id="" aria-describedby="helpId"
+                                            placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" name="" id="generateReportBtn" class="btn btn-outline-success btn-block">Generate
+                                Report</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SAMPLE REPORT TABLE -->
+                <div class="container mt-5" style="display: none" id="displayReport">
+                    <h1 class="text-center">Popular Food Item Sales Report</h1>
+                    <hr>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>No. </th>
+                                <th>Food Item</th>
+                                <th>Total Ordered</th>
+                                <th>Price per unit (RM)</th>
+                                <th>Total Price (RM)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">1</td>
+                                <td>Fried Fish Soup with Tomato</td>
+                                <td>750</td>
+                                <td>35</td>
+                                <td>37,500</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">2</td>
+                                <td>Fried Rice</td>
+                                <td>500</td>
+                                <td>8</td>
+                                <td>4,000</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">2</td>
+                                <td>Chicken Soup</td>
+                                <td>220</td>
+                                <td>10</td>
+                                <td>2,200</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">TOTAL SALES (RM):</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>43,700</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row">
+                        <div class="col-md-10 mx-auto">
+                            <button type="button" name="" id="backToGenReportBtn" class="btn btn-outline-primary btn-block">Back</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- STAFF MODULE -->
+        <div class="tab-pane fade" id="pills-staff" role="tabpanel" aria-labelledby="pills-staff-tab">
+            <section style="min-height: 100vh;">
+
+                <!-- STAFF LOGIN FORM -->
+                <div class="container" style="padding-top:15vh;" id="staffLoginForm">
+                    <h1 class="text-center">Staff Login</h1>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-10 mx-auto">
+                            <label for=""><span style="color:red">*</span> Indicates required field.</label>
+
+                            <div class="form-group">
+                                <label for="">Staff ID<span style="color:red">*</span></label>
+                                <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                <small id="helpId" class="text-muted">Enter staff ID</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Password<span style="color:red">*</span></label>
+                                <input type="password" name="" id="" class="form-control" placeholder=""
+                                    aria-describedby="helpId">
+                                <small id="helpId" class="text-muted">Enter pasword</small>
+                            </div>
+
+                            <button type="button" name="" id="staffLoginBtn" class="btn btn-outline-success btn-block">Login</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REGISTER STAFF FORM -->
+                <div class="container mt-4" style="display: none" id="registerStaffForm">
+                    <h1 class="text-center">Register New Staff</h1>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-10 mx-auto">
+                            <form>
+                                <div class="form-group">
+                                    <label for="">Staff Name<span style="color:red">*</span></label>
+                                    <input type="text" name="" id="" class="form-control" placeholder=""
+                                        aria-describedby="helpId">
+                                    <small id="helpId" class="text-muted">Enter staff name</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">IC Number<span style="color:red">*</span></label>
+                                    <input type="text" name="" id="" class="form-control" placeholder=""
+                                        aria-describedby="helpId">
+                                    <small id="helpId" class="text-muted">Enter IC number </small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Contact Number<span style="color:red">*</span></label>
+                                    <input type="text" name="" id="" class="form-control" placeholder=""
+                                        aria-describedby="helpId">
+                                    <small id="helpId" class="text-muted">Enter contact number </small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Birth Date<span style="color:red">*</span></label>
+                                    <input type="date" name="" id="" class="form-control" placeholder=""
+                                        aria-describedby="helpId">
+                                    <small id="helpId" class="text-muted">Enter staff birth date</small>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <span style="color:red">*</span>&nbsp;
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="" id="" value="m" checked>Male
+                                        <input type="radio" class="form-check-input" name="" id="" value="f">Female
+                                    </label>
+                                </div>
+                                <small id="helpId" class="text-muted">Select staff gender</small>
+                                <div class="form-group">
+                                    <label for="">Password<span style="color:red">*</span></label>
+                                    <input type="password" name="" id="" class="form-control" placeholder=""
+                                        aria-describedby="helpId">
+                                    <small id="helpId" class="text-muted">Enter pasword</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Confirm Password<span style="color:red">*</span></label>
+                                    <input type="confirm_password" name="" id="" class="form-control" placeholder=""
+                                        aria-describedby="helpId">
+                                    <small id="helpId" class="text-muted">Enter confirm pasword</small>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button type="button" name="" id="" class="btn btn-outline-success btn-block"
+                                            data-toggle="modal" data-target="#successRegisterStaffModal">Register</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="reset" name="" id="" class="btn btn-outline-primary btn-block">Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REGISTER STAFF SUCCESSFUL MODAL -->
+                <div class="modal fade" id="successRegisterStaffModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Registration Sucessful</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                The new staff memeber has been successfully registered!
+                            </div>
+                            <div class="container mb-2">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-primary btn-block">OK</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.onready = (function () {
+            let staffLoginBtn = document.querySelector('#staffLoginBtn');
+            let generateReportBtn = document.querySelector('#generateReportBtn');
+            let backToGenReportBtn = document.querySelector('#backToGenReportBtn');
+
+            // Function to display register new staff form & hide staff login form
+            function displayRegisterStaffForm(e) {
+                document.querySelector('#registerStaffForm').style.display = '';
+                document.querySelector('#staffLoginForm').style.display = 'none';
+            }
+
+            // Function to display report & hide generate report form
+            function displayReport(e) {
+                document.querySelector('#displayReport').style.display = '';
+                document.querySelector('#generateReportForm').style.display = 'none';
+            }
+
+            // Function to display generate report form & hide report
+            function backToGenReport(e) {
+                document.querySelector('#generateReportForm').style.display = '';
+                document.querySelector('#displayReport').style.display = 'none';
+            }
+
+            staffLoginBtn.addEventListener('click', displayRegisterStaffForm);
+            generateReportBtn.addEventListener('click', displayReport);
+            backToGenReportBtn.addEventListener('click', backToGenReport);
+        })();
+    </script>
+</body>
+
+</html>
