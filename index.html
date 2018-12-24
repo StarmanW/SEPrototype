@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Staff Login</title>
+    <title>Mei Keng Restaurant</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
+    <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="pills-menu-tab" data-toggle="pill" href="#pills-menu" role="tab"
                 aria-controls="pills-menu" aria-selected="true">Menu</a>
@@ -40,14 +40,20 @@
         <div class="tab-pane fade show active" id="pills-menu" role="tabpanel" aria-labelledby="pills-menu-tab">
             Menu Module
         </div>
+
+        <!-- ORDER MODULE -->
         <div class="tab-pane fade" id="pills-order" role="tabpanel" aria-labelledby="pills-order-tab">
-            Order Module
+            <section style="min-height: 100vh;" class="bg-info">
+                <div class="container">
+                    <div class="row"></div>
+                </div>
+            </section>
         </div>
 
         <!-- PAYMENT MODULE -->
         <div class="tab-pane fade" id="pills-payment" role="tabpanel" aria-labelledby="pills-payment-tab">
-            <section style="min-height: 100vh;">
-                <div class="container bg-light" style="min-height: 100vh;">
+            <section style="min-height: 100vh;" class="bg-info">
+                <div class="container pt-4 bg-light" style="min-height: 100vh;">
                     <h3 class="text-center">Payment for Table #8</h3>
                     <div class="row">
                         <div class="col-md-8 mx-auto">
@@ -141,7 +147,7 @@
 
         <!-- REPORT MODULE -->
         <div class="tab-pane fade" id="pills-report" role="tabpanel" aria-labelledby="pills-report-tab">
-            <section style="min-height: 100vh;">
+            <section style="min-height: 100vh;" class="bg-info">
                 <!-- SELECT REPORT FORM -->
                 <div class="container bg-light" style="padding-top:15vh; min-height: 100vh;" id="generateReportForm">
                     <h1 class="text-center">Generate Report</h1>
@@ -236,7 +242,7 @@
 
         <!-- STAFF MODULE -->
         <div class="tab-pane fade" id="pills-staff" role="tabpanel" aria-labelledby="pills-staff-tab">
-            <section style="min-height: 100vh;">
+            <section style="min-height: 100vh;" class="bg-info">
 
                 <!-- STAFF LOGIN FORM -->
                 <div class="container bg-light" style="padding-top:15vh; min-height: 100vh" id="staffLoginForm">
@@ -398,7 +404,8 @@
             // Function to calculate balance and display the balance
             function calculateBalance(e) {
                 let cashAmt = document.querySelector('#cashAmt').value;
-                document.querySelector('#changesTxtBox').value = parseFloat(parseFloat(cashAmt) - 88.00).toFixed(2);
+                document.querySelector('#changesTxtBox').value = parseFloat(parseFloat(cashAmt) - 88.00).toFixed(
+                    2);
             }
 
             staffLoginBtn.addEventListener('click', displayRegisterStaffForm);
