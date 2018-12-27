@@ -76,6 +76,25 @@
 </head>
 
 <body>
+    <div class="w3-sidebar w3-bar-block bg-dark w3-animate-left" style="display:none; z-index:1029" id="mySidebar">
+        <button onclick="w3_close()" class="btn btn-secondary btn-block btn-lg mt-5" type="button">Close&nbsp;<i class="fa fa-times fa-lg"></i></button>
+        <div class="input-group mt-5">
+            <input type="text" class="form-control fa-lg" placeholder="Search Food" aria-label="Recipient's username"
+                aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary fa-lg" type="button"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <select class="custom-select mt-5">
+            <option selected="">Sort By</option>
+            <option value="1">Dish</option>
+            <option value="2">A la carte</option>
+            <option value="3">Soup</option>
+            <option value="3">Drinks</option>
+        </select>
+        <button onclick="" class="btn btn-primary btn-block btn-lg mt-5" type="button">Manage Menu&nbsp;<i class="fa fa-cog fa-lg"></i></button>
+    </div>
+
     <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="pills-menu-tab" data-toggle="pill" href="#pills-menu" role="tab"
@@ -102,25 +121,6 @@
     <div class="tab-content" id="pills-tabContent">
         <!-- MENU MODULE -->
         <div class="tab-pane fade show active" id="pills-menu" role="tabpanel" aria-labelledby="pills-menu-tab">
-            <div class="w3-sidebar w3-bar-block bg-dark w3-animate-left" style="display:none; z-index:1029" id="mySidebar">
-                <button onclick="w3_close()" class="btn btn-secondary btn-block btn-lg mt-5" type="button">Close&nbsp;<i class="fa fa-times fa-lg"></i></button>
-                <div class="input-group mt-5">
-                    <input type="text" class="form-control fa-lg" placeholder="Search Food" aria-label="Recipient's username"
-                           aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary fa-lg" type="button"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-                <select class="custom-select mt-5">
-                    <option selected="">Sort By</option>
-                    <option value="1">Dish</option>
-                    <option value="2">A la carte</option>
-                    <option value="3">Soup</option>
-                    <option value="3">Drinks</option>
-                </select>
-                <button onclick="" class="btn btn-primary btn-block btn-lg mt-5" type="button">Manage Menu&nbsp;<i class="fa fa-cog fa-lg"></i></button>
-            </div>
-        
             <div class="album py-5 bg-light" style="min-height: 100vh">
                 <button class="btn btn-primary btn-lg sticky-top ml-3" style="z-index:1" onclick="w3_open()"><i class="fa fa-ellipsis-v fa-lg"></i></button>
                 <div class="container">
@@ -151,7 +151,7 @@
                                 </div>
                             </div>
                         </div>
-        
+
                         <div class="col-md-4">
                             <div class="card mb-3 shadow-sm">
                                 <img class="" src="./img/tea.jpg" />
@@ -177,7 +177,7 @@
                                 </div>
                             </div>
                         </div>
-        
+
                         <div class="col-md-4">
                             <div class="card mb-3 shadow-sm">
                                 <img class="card-img-top" src="./img/fish_soup.jpg" />
@@ -198,7 +198,8 @@
                                             <p class="card-text text-muted">9 mins</p>
                                         </div>
                                         <div class="col-lg-3 col-3">
-                                            <button type="button" class="btn btn-outline-primary float-right" data-toggle="modal" data-target="#foodDescModal">
+                                            <button type="button" class="btn btn-outline-primary float-right"
+                                                data-toggle="modal" data-target="#foodDescModal">
                                                 <i class="fa fa-question"></i>
                                             </button>
                                         </div>
@@ -206,7 +207,7 @@
                                 </div>
                             </div>
                         </div>
-        
+
                         <div class="col-md-4">
                             <div class="card mb-3 shadow-sm">
                                 <img src="./img/brocolli.jpg" />
@@ -232,7 +233,7 @@
                                 </div>
                             </div>
                         </div>
-        
+
                         <div class="col-md-4">
                             <div class="card mb-3 shadow-sm">
                                 <img src="./img/curry.jpg" />
@@ -258,7 +259,7 @@
                                 </div>
                             </div>
                         </div>
-        
+
                         <div class="col-md-4">
                             <div class="card mb-3 shadow-sm">
                                 <img src="./img/chicken_soup.jpg" />
@@ -284,13 +285,14 @@
                                 </div>
                             </div>
                         </div>
-        
+
                     </div>
                 </div>
             </div>
-        
+
             <!-- Modal -->
-            <div class="modal fade" id="foodDescModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label" aria-hidden="true">
+            <div class="modal fade" id="foodDescModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -513,7 +515,8 @@
                                     placeholder="">
                             </div>
 
-                            <button type="button" id="makePaymentBtn" class="btn btn-lg btn-primary btn-block">Make Payment</button>
+                            <button type="button" id="makePaymentBtn" class="btn btn-lg btn-primary btn-block">Make
+                                Payment</button>
                         </div>
                     </div>
                 </div>
