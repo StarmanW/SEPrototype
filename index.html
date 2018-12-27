@@ -111,10 +111,10 @@
 
 <body>
     <div class="w3-sidebar w3-bar-block bg-dark w3-animate-left" style="display:none; z-index:1029" id="mySidebar">
-        <button onclick="w3_close()" class="btn btn-secondary btn-block btn-lg mt-5" type="button">Close&nbsp;<i class="fa fa-times fa-lg"></i></button>
+        <button onclick="w3_close()" class="btn btn-secondary btn-block btn-lg mt-5" type="button"><i class="fa fa-times fa-lg"></i>&nbsp;Close</button>
         <div class="input-group mt-5">
             <input type="text" class="form-control fa-lg" placeholder="Search Food" aria-label="Recipient's username"
-                aria-describedby="basic-addon2">
+                   aria-describedby="basic-addon2">
             <div class="input-group-append">
                 <button class="btn btn-primary fa-lg" type="button"><i class="fa fa-search"></i></button>
             </div>
@@ -126,30 +126,46 @@
             <option value="3">Soup</option>
             <option value="3">Drinks</option>
         </select>
-        <button onclick="" class="btn btn-primary btn-block btn-lg mt-5" id="manageMenuBtn" type="button">Manage
-            Menu&nbsp;<i class="fa fa-cog fa-lg"></i></button>
+        <button onclick="" class="btn btn-primary btn-block btn-lg mt-5" id="manageMenuBtn" type="button">
+            <i class="fa fa-cog fa-lg"></i>&nbsp;Manage Menu
+        </button>
+    </div>
+
+    <div class="w3-sidebar w3-bar-block bg-dark w3-animate-left" style="display:none; z-index:1029" id="mySidebarManage">
+        <button onclick="w3_close_manage()" class="btn btn-secondary btn-block btn-lg mt-5" type="button"><i class="fa fa-times fa-lg"></i> Close</button>
+        <div class="input-group mt-5">
+            <input type="text" class="form-control fa-lg" placeholder="Search Food" aria-label="Recipient's username"
+                   aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary fa-lg" type="button"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <div class="input-group mt-5">
+            <button type="button" name="" id="" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#addFoodModal"><i class="fa fa-plus fa-lg"></i> &nbsp; Add Food</button>
+        </div>
+        <button onclick="" class="btn btn-primary btn-block btn-lg mt-5" id="backToMenuBtn" type="button"><i class="fa fa-arrow-left fa-lg"></i>&nbsp;Back To Menu</button>
     </div>
 
     <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="pills-menu-tab" data-toggle="pill" href="#pills-menu" role="tab"
-                aria-controls="pills-menu" aria-selected="true">Menu</a>
+               aria-controls="pills-menu" aria-selected="true">Menu</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="pills-order-tab" data-toggle="pill" href="#pills-order" role="tab" aria-controls="pills-order"
-                aria-selected="false">Order</a>
+               aria-selected="false">Order</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="pills-payment-tab" data-toggle="pill" href="#pills-payment" role="tab"
-                aria-controls="pills-payment" aria-selected="false">Payment</a>
+               aria-controls="pills-payment" aria-selected="false">Payment</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="pills-report-tab" data-toggle="pill" href="#pills-report" role="tab" aria-controls="pills-report"
-                aria-selected="false">Report</a>
+               aria-selected="false">Report</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="pills-staff-tab" data-toggle="pill" href="#pills-staff" role="tab" aria-controls="pills-staff"
-                aria-selected="false">Staff</a>
+               aria-selected="false">Staff</a>
         </li>
     </ul>
 
@@ -159,7 +175,8 @@
 
             <!-- MENU LIST SECTION -->
             <div class="album py-5 bg-light" style="min-height: 100vh" id="menuListSection">
-                <button class="btn btn-primary btn-lg sticky-top ml-3" style="z-index:1" onclick="w3_open()"><i class="fa fa-ellipsis-v fa-lg"></i></button>
+                <button class="btn btn-primary btn-lg sticky-top ml-3" style="z-index:1" id="w3_open_btn" onclick="w3_open()"><i class="fa fa-ellipsis-v fa-lg"></i></button>
+                <button class="btn btn-primary btn-lg sticky-top ml-3" style="z-index:1;display:none" id="w3_open_manage_btn" onclick="w3_open_manage()"><i class="fa fa-ellipsis-v fa-lg"></i></button>
                 <div class="container">
                     <div class="row">
 
@@ -236,7 +253,7 @@
                                         </div>
                                         <div class="col-lg-3 col-3">
                                             <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                                                data-target="#foodDescModal">
+                                                    data-target="#foodDescModal">
                                                 <i class="fa fa-question"></i>
                                             </button>
                                         </div>
@@ -326,9 +343,48 @@
                 </div>
             </div>
 
+            <!-- Modal -->
+            <div class="modal fade" id="foodDescModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="">
+                                <div class=" shadow-sm">
+                                    <img class="modal-img" src="./img/fish_soup.jpg" />
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <h2>Fried Fish Soup with Tomato</h2>
+                                <hr />
+                                <h5>Tender pieces of fish simmering in a mildly flavored tomato soup.</h5>
+                                <h3>Ingredients</h3>
+                                <ol>
+                                    <li>Red Snapper fillets</li>
+                                    <li>Garlic</li>
+                                    <li>Celery</li>
+                                    <li>Onion</li>
+                                    <li>Chicken broth</li>
+                                    <li>Fresh parsley</li>
+                                    <li>Dried bay leaf</li>
+                                    <li>Tomatoes</li>
+                                    <li>Salt and pepper</li>
+                                    <li>Grated lemon peel</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- MANAGE MENU SECTION -->
-            <div class="album py-5 bg-light" id="manageMenuSection">
-                <button class="btn btn-primary btn-lg sticky-top ml-3" style="z-index:1" onclick="w3_open()"><i class="fa fa-ellipsis-v fa-lg"></i></button>
+            <div class="album py-5 bg-light" id="manageMenuSection" style="display:none;min-height:100vh">
+                <button class="btn btn-primary btn-lg sticky-top ml-3" style="z-index:1" onclick="w3_open_manage()"><i class="fa fa-ellipsis-v fa-lg"></i></button>
                 <div class="container">
                     <table class="table table-striped table-hover sortable">
                         <thead class="thead-dark">
@@ -371,7 +427,7 @@
 
             <!-- Modal -->
             <div class="modal fade" id="editFoodModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"
-                aria-hidden="true">
+                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-body">
@@ -393,6 +449,10 @@
                                     <label for="">Description</label>
                                     <textarea class="form-control" type="text">Tender pieces of fish simmering in a mildly flavored tomato soup.</textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="">Ingredients</label>
+                                    <textarea class="form-control" type="text"></textarea>
+                                </div>
                                 <div class="form-group row my-4">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Price</label>
                                     <div class="col-sm-10">
@@ -402,7 +462,7 @@
                                                 <div class="input-group-text">RM</div>
                                             </div>
                                             <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
-                                                placeholder="" value="35.00">
+                                                   placeholder="" value="35.00">
                                         </div>
                                     </div>
                                 </div>
@@ -411,7 +471,7 @@
                                     <div class="btn-group btn-group-toggle btn-group-lg" data-toggle="buttons">
                                         <label class="btn btn-lg btn-outline-primary">
                                             <input type="radio" name="options" id="radio-option-1" autocomplete="off"
-                                                checked="checked">Available
+                                                   checked="checked">Available
                                         </label>
                                         <label class="btn btn-lg btn-outline-primary">
                                             <input type="radio" name="options" id="radio-option-2" autocomplete="off">
@@ -427,7 +487,9 @@
                         </div>
                         <div class="m-3">
                             <button type="button" class="btn btn-danger btn-lg float-left" data-toggle="modal"
-                                data-target="#deleteFoodMsgModal">Delete</button>
+                                    data-target="#deleteFoodMsgModal">
+                                Delete
+                            </button>
                             <div class="float-right">
                                 <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary btn-lg">Save</button>
@@ -439,7 +501,7 @@
 
             <!-- Modal -->
             <div class="modal" id="deleteFoodMsgModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalVerticalLabel"
-                aria-hidden="true">
+                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-body">
@@ -461,10 +523,11 @@
                             <div class="">
                                 <div class="card mb-1 shadow-sm">
                                     <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-                                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image">
+                                         preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image">
                                         <title>Placeholder</title>
-                                        <rect fill="#55595c" width="100%" height="100%" /><text fill="#eceeef" dy=".3em"
-                                            x="50%" y="50%">Image</text>
+                                        <rect fill="#55595c" width="100%" height="100%" />
+                                        <text fill="#eceeef" dy=".3em"
+                                              x="50%" y="50%">Image</text>
                                     </svg>
 
                                     <div class="custom-file">
@@ -482,6 +545,10 @@
                                     <label for="">Description</label>
                                     <textarea class="form-control" type="text"></textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="">Ingredients</label>
+                                    <textarea class="form-control" type="text"></textarea>
+                                </div>
                                 <div class="form-group row my-4">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Price</label>
                                     <div class="col-sm-10">
@@ -491,7 +558,7 @@
                                                 <div class="input-group-text">RM</div>
                                             </div>
                                             <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
-                                                placeholder="" value="">
+                                                   placeholder="" value="">
                                         </div>
                                     </div>
                                 </div>
@@ -499,7 +566,7 @@
                                     <div class="btn-group btn-group-toggle btn-group-lg" data-toggle="buttons">
                                         <label class="btn btn-lg btn-outline-primary">
                                             <input type="radio" name="options" id="radio-option-1" autocomplete="off"
-                                                checked="">Available
+                                                   checked="">Available
                                         </label>
                                         <label class="btn btn-lg btn-outline-primary">
                                             <input type="radio" name="options" id="radio-option-2" autocomplete="off">
@@ -534,12 +601,16 @@
                         <div class="col-md-4">
                             <div class="list-group" id="list-tab" role="tablist">
                                 <a class="list-group-item list-group-item-action active" id="list-home-list"
-                                    data-toggle="list" href="#list-home" role="tab" aria-controls="home">Order 1
+                                   data-toggle="list" href="#list-home" role="tab" aria-controls="home">
+                                    Order 1
                                     (Table
-                                    2)</a>
+                                    2)
+                                </a>
                                 <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
-                                    href="#list-profile" role="tab" aria-controls="profile">Order
-                                    2 (Table 5)</a>
+                                   href="#list-profile" role="tab" aria-controls="profile">
+                                    Order
+                                    2 (Table 5)
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -557,26 +628,34 @@
                                             <tr>
                                                 <td scope="row">Chinese Tea</td>
                                                 <td scope="row">2</td>
-                                                <td><i class="far fa-edit" style="width: 20%;"></i><i class="far fa-trash-alt"
-                                                        style="width: 20%;"></i></td>
+                                                <td>
+                                                    <i class="far fa-edit" style="width: 20%;"></i><i class="far fa-trash-alt"
+                                                                                                      style="width: 20%;"></i>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td scope="row">Fried Rice</td>
                                                 <td scope="row">2</td>
-                                                <td><i class="far fa-edit" style="width: 20%;"></i><i class="far fa-trash-alt"
-                                                        style="width: 20%;"></i></td>
+                                                <td>
+                                                    <i class="far fa-edit" style="width: 20%;"></i><i class="far fa-trash-alt"
+                                                                                                      style="width: 20%;"></i>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <button type="button" name="" id="" class="btn btn-lg btn-success btn-block">Mark
+                                            <button type="button" name="" id="" class="btn btn-lg btn-success btn-block">
+                                                Mark
                                                 Order
-                                                Done</button>
+                                                Done
+                                            </button>
                                         </div>
                                         <div class="col-md-6">
-                                            <button type="button" name="" id="" class="btn btn-lg btn-danger btn-block">Cancel
-                                                Order</button>
+                                            <button type="button" name="" id="" class="btn btn-lg btn-danger btn-block">
+                                                Cancel
+                                                Order
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -593,26 +672,34 @@
                                             <tr>
                                                 <td scope="row">Chinese Tea</td>
                                                 <td scope="row">2</td>
-                                                <td><i class="far fa-edit" style="width: 20%;"></i><i class="far fa-trash-alt"
-                                                        style="width: 20%;"></i></td>
+                                                <td>
+                                                    <i class="far fa-edit" style="width: 20%;"></i><i class="far fa-trash-alt"
+                                                                                                      style="width: 20%;"></i>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td scope="row">Fried Rice</td>
                                                 <td scope="row">2</td>
-                                                <td><i class="far fa-edit" style="width: 20%;"></i><i class="far fa-trash-alt"
-                                                        style="width: 20%;"></i></td>
+                                                <td>
+                                                    <i class="far fa-edit" style="width: 20%;"></i><i class="far fa-trash-alt"
+                                                                                                      style="width: 20%;"></i>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <button type="button" name="" id="" class="btn btn-lg btn-success btn-block">Mark
+                                            <button type="button" name="" id="" class="btn btn-lg btn-success btn-block">
+                                                Mark
                                                 Order
-                                                Done</button>
+                                                Done
+                                            </button>
                                         </div>
                                         <div class="col-md-6">
-                                            <button type="button" name="" id="" class="btn btn-lg btn-danger btn-block">Cancel
-                                                Order</button>
+                                            <button type="button" name="" id="" class="btn btn-lg btn-danger btn-block">
+                                                Cancel
+                                                Order
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -702,17 +789,19 @@
                             <div class="form-group">
                                 <label for="">Amount (RM)</label>
                                 <input type="text" class="form-control" name="" id="cashAmt" aria-describedby="helpId"
-                                    placeholder="">
+                                       placeholder="">
                             </div>
 
                             <div class="form-group">
                                 <label for="">Changes (RM)</label>
                                 <input type="text" class="form-control" name="" id="changesTxtBox" aria-describedby="helpId"
-                                    placeholder="">
+                                       placeholder="">
                             </div>
 
-                            <button type="button" id="makePaymentBtn" class="btn btn-lg btn-primary btn-block">Make
-                                Payment</button>
+                            <button type="button" id="makePaymentBtn" class="btn btn-lg btn-primary btn-block">
+                                Make
+                                Payment
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -742,17 +831,19 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input type="date" class="form-control" name="" id="" aria-describedby="helpId"
-                                            placeholder="">
+                                               placeholder="">
                                     </div>
                                     to
                                     <div class="col-md-5">
                                         <input type="date" class="form-control" name="" id="" aria-describedby="helpId"
-                                            placeholder="">
+                                               placeholder="">
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" name="" id="generateReportBtn" class="btn btn-lg btn-success btn-block">Generate
-                                Report</button>
+                            <button type="button" name="" id="generateReportBtn" class="btn btn-lg btn-success btn-block">
+                                Generate
+                                Report
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -834,7 +925,7 @@
                             <div class="form-group">
                                 <label for="">Password<span style="color:red">*</span></label>
                                 <input type="password" name="" id="" class="form-control" placeholder=""
-                                    aria-describedby="helpId">
+                                       aria-describedby="helpId">
                                 <small id="helpId" class="text-muted">Enter pasword</small>
                             </div>
 
@@ -853,25 +944,25 @@
                                 <div class="form-group">
                                     <label for="">Staff Name<span style="color:red">*</span></label>
                                     <input type="text" name="" id="" class="form-control" placeholder=""
-                                        aria-describedby="helpId">
+                                           aria-describedby="helpId">
                                     <small id="helpId" class="text-muted">Enter staff name</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="">IC Number<span style="color:red">*</span></label>
                                     <input type="text" name="" id="" class="form-control" placeholder=""
-                                        aria-describedby="helpId">
+                                           aria-describedby="helpId">
                                     <small id="helpId" class="text-muted">Enter IC number </small>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Contact Number<span style="color:red">*</span></label>
                                     <input type="text" name="" id="" class="form-control" placeholder=""
-                                        aria-describedby="helpId">
+                                           aria-describedby="helpId">
                                     <small id="helpId" class="text-muted">Enter contact number </small>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Birth Date<span style="color:red">*</span></label>
                                     <input type="date" name="" id="" class="form-control" placeholder=""
-                                        aria-describedby="helpId">
+                                           aria-describedby="helpId">
                                     <small id="helpId" class="text-muted">Enter staff birth date</small>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -885,20 +976,22 @@
                                 <div class="form-group">
                                     <label for="">Password<span style="color:red">*</span></label>
                                     <input type="password" name="" id="" class="form-control" placeholder=""
-                                        aria-describedby="helpId">
+                                           aria-describedby="helpId">
                                     <small id="helpId" class="text-muted">Enter pasword</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Confirm Password<span style="color:red">*</span></label>
                                     <input type="confirm_password" name="" id="" class="form-control" placeholder=""
-                                        aria-describedby="helpId">
+                                           aria-describedby="helpId">
                                     <small id="helpId" class="text-muted">Enter confirm pasword</small>
                                 </div>
 
                                 <div class="row pb-4">
                                     <div class="col-md-6">
                                         <button type="button" name="" id="" class="btn btn-lg btn-success btn-block"
-                                            data-toggle="modal" data-target="#successRegisterStaffModal">Register</button>
+                                                data-toggle="modal" data-target="#successRegisterStaffModal">
+                                            Register
+                                        </button>
                                     </div>
                                     <div class="col-md-6">
                                         <button type="reset" name="" id="" class="btn btn-lg btn-primary btn-block">Reset</button>
@@ -911,7 +1004,7 @@
 
                 <!-- REGISTER STAFF SUCCESSFUL MODAL -->
                 <div class="modal fade" id="successRegisterStaffModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-                    aria-hidden="true">
+                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -945,11 +1038,11 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>
 
     <script>
         $(function () {
@@ -964,12 +1057,21 @@
             document.getElementById("mySidebar").style.display = "none";
         }
 
+        function w3_open_manage() {
+            document.getElementById("mySidebarManage").style.display = "block";
+        }
+
+        function w3_close_manage() {
+            document.getElementById("mySidebarManage").style.display = "none";
+        }
+
         document.onready = (function () {
             let staffLoginBtn = document.querySelector('#staffLoginBtn');
             let generateReportBtn = document.querySelector('#generateReportBtn');
             let backToGenReportBtn = document.querySelector('#backToGenReportBtn');
             let makePaymentBtn = document.querySelector('#makePaymentBtn');
             let manageMenuBtn = document.querySelector('#manageMenuBtn');
+            let backToMenuBtn = document.querySelector('#backToMenuBtn');
 
             // Function to display register new staff form & hide staff login form
             function displayRegisterStaffForm(e) {
@@ -1000,18 +1102,19 @@
             function changeMenuPage() {
                 document.querySelector('#manageMenuSection').style.display = '';
                 document.querySelector('#menuListSection').style.display = 'none';
-                document.querySelector('#mySidebar').innerHTML =
-                    `<button onclick="w3_close()" class="btn btn-secondary btn-block btn-lg mt-5" type="button"><i class="fa fa-times fa-lg"></i> Close</button>
-        <div class="input-group mt-5">
-            <input type="text" class="form-control fa-lg" placeholder="Search Food" aria-label="Recipient's username"
-                   aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-primary fa-lg" type="button"><i class="fa fa-search"></i></button>
-            </div>
-        </div>
-        <div class="input-group mt-5">
-            <button type="button" name="" id="" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#addFoodModal"><i class="fa fa-plus fa-lg"></i> &nbsp; Add Food</button>
-        </div>`;
+                document.querySelector('#w3_open_btn').style.display = 'none';
+                document.querySelector('#w3_open_manage_btn').style.display = '';
+                document.querySelector('#mySidebar').style.display = 'none';
+                document.querySelector('#mySidebarManage').style.display = '';
+            }
+
+            function backToMenuPage() {
+                document.querySelector('#manageMenuSection').style.display = 'none';
+                document.querySelector('#menuListSection').style.display = '';
+                document.querySelector('#w3_open_btn').style.display = '';
+                document.querySelector('#w3_open_manage_btn').style.display = 'none';
+                document.querySelector('#mySidebar').style.display = '';
+                document.querySelector('#mySidebarManage').style.display = 'none';
             }
 
             staffLoginBtn.addEventListener('click', displayRegisterStaffForm);
@@ -1019,6 +1122,7 @@
             backToGenReportBtn.addEventListener('click', backToGenReport);
             makePaymentBtn.addEventListener('click', calculateBalance);
             manageMenuBtn.addEventListener('click', changeMenuPage);
+            backToMenuBtn.addEventListener('click', backToMenuPage);
         })();
     </script>
 </body>
